@@ -1,7 +1,7 @@
 import ipaddress
 
 # Dirección base de la red
-direccion_base = ipaddress.IPv4Address(input("Dirección base:"))
+direccion_base = ipaddress.IPv4Address(input("Dirección base: "))
 
 # Solicitar al usuario la cantidad de hosts para cada red
 host_solicitados = [int(x) for x in input("Introduce la cantidad de hosts para cada red (separados por comas): ").split(",")]
@@ -11,6 +11,12 @@ for num_hosts in host_solicitados:
     # Calcular la máscara de subred necesaria
     bits_de_host = num_hosts.bit_length()
     mascara = 32 - bits_de_host
+    host_encontrados = 2**(32 - mascara) - 2
+
+    # Asegura que los host solicitados no superen a los encontrados
+    if host_encontrados < num_hosts:
+        mascara -= 1
+        host_encontrados = 2**(32 - mascara) - 2
 
     # Calcular la dirección de red
     direccion_red = ipaddress.IPv4Network((direccion_base, mascara), strict=False)
@@ -24,7 +30,7 @@ for num_hosts in host_solicitados:
 
     # Imprimir la información
     print("Host solicitados:", num_hosts)
-    print("Host encontrados:", 2**(32 - mascara) - 2)  # Restamos 2 para excluir la dirección de red y la de broadcast
+    print("Host encontrados:", host_encontrados)
     print("Dirección de red:", direccion_red)
     print("Máscara digital:", "/" + str(mascara))
     print("Máscara decimal:", str(direccion_red.netmask))
