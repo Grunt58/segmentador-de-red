@@ -1,10 +1,10 @@
 import ipaddress
 
+# Dirección base de la red
+direccion_base = ipaddress.IPv4Address(input("Dirección base:"))
+
 # Solicitar al usuario la cantidad de hosts para cada red
 host_solicitados = [int(x) for x in input("Introduce la cantidad de hosts para cada red (separados por comas): ").split(",")]
-
-# Dirección base de la red
-direccion_base = ipaddress.IPv4Address("200.1.4.0")
 
 # Calcular y mostrar información para cada red
 for num_hosts in host_solicitados:
