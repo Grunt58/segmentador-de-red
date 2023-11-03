@@ -18,6 +18,16 @@ for num_hosts in host_solicitados:
         mascara -= 1
         host_encontrados = 2**(32 - mascara) - 2
 
+    # Guarda la cantidad de bits activos por segmento
+    bits_activos = 8 - (32 - mascara)
+    bits = []
+    for i in range(8):
+        if bits_activos > 0:
+            bits.append(1)
+        else:
+            bits.append(0)
+        bits_activos -= 1
+
     # Calcular la dirección de red
     direccion_red = ipaddress.IPv4Network((direccion_base, mascara), strict=False)
 
