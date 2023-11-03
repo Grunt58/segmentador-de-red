@@ -42,7 +42,7 @@ for num_hosts in host_solicitados:
     print("Host solicitados:", num_hosts)
     print("Host encontrados:", host_encontrados)
     print("Dirección de red:", direccion_red)
-    print("Máscara digital:", "/" + str(mascara))
+    print("Máscara digital:", ''.join(map(str,bits)) + "=/" + str(mascara))
     print("Máscara decimal:", str(direccion_red.netmask))
     print("Primera IP utilizable:", primera_ip_utilizable)
     print("Última IP utilizable:", ultima_ip_utilizable)
