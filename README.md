@@ -52,3 +52,12 @@ También puedes usar [replit](https://replit.com) para ejecutarlo.
         <img src="https://www.qsbsexpert.com/wp-content/uploads/2021/07/Repl.it_logo.png" style="width:500px;height:150px;">
     </a>
 </p>
+
+## ¿Porqué desarrolle el programa?
+
+Hay varias razones por la que inicié este pequeño proyecto:
+- Ayudarme a resolver con mayor facilidad los segmentos de una red.
+- Aprender a usar Git <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" height=12> y GitHub <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height=15>.
+- Comprender como funciona el flujo de trabajo en desarrollo de software.
+
+Sigo aprendiendo sobre las prácticas recomendadas para los nombres a los `commits` y `branches`, a utilizar los `issues` y `pull request` correctamente.
