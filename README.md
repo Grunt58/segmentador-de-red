@@ -53,7 +53,7 @@ También puedes usar [replit](https://replit.com) para ejecutarlo.
     </a>
 </p>
 
-## ¿Porqué desarrolle el programa?
+## ¿Porqué desarrollé el programa?
 
 Hay varias razones por la que inicié este pequeño proyecto:
 - Ayudarme a resolver con mayor facilidad los segmentos de una red.
