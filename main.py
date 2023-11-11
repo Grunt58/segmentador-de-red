@@ -40,15 +40,18 @@ for num_hosts in host_solicitados:
     ultima_ip_utilizable = direccion_br - 1
 
     # Imprimir la información
-    print("Host solicitados:", num_hosts)
-    print("Host encontrados:", host_encontrados)
-    print("Dirección de red:", direccion_red)
-    print("Máscara digital:", ''.join(map(str,bits)) + "=/" + str(mascara))
-    print("Máscara decimal:", str(direccion_red.netmask))
-    print("Primera IP utilizable:", primera_ip_utilizable)
-    print("Última IP utilizable:", ultima_ip_utilizable)
-    print("Dirección de BR:", direccion_br)
-    print()
+    print(f"""
+Host solicitados: {num_hosts}
+Host encontrados: {host_encontrados}
+Dirección de red: {direccion_red}
+Máscara digital: {''.join(map(str,bits)) + "=/" + str(mascara)}
+Máscara decimal: {str(direccion_red.netmask)}
+Primera IP utilizable: {primera_ip_utilizable}
+Última IP utilizable: {ultima_ip_utilizable}
+Dirección de BR: {direccion_br}
+""")
+    
+    
     
     # Actualizar la dirección base para la siguiente red
     direccion_base += 2**(32 - mascara)
