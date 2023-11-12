@@ -8,7 +8,7 @@ host_solicitados = [int(x) for x in input("Introduce la cantidad de hosts para c
 host_solicitados.sort(reverse=True)
 
 # Calcular y mostrar información para cada red
-for index, num_hosts in enumerate(host_solicitados):
+for index, num_hosts in enumerate(host_solicitados): # Se utilizó "enumerate" para saber en qué segmento estamos.
     # Calcular la máscara de subred necesaria
     bits_de_host = num_hosts.bit_length()
     mascara = 32 - bits_de_host
