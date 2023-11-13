@@ -57,5 +57,5 @@ class Red_Segmentada:
         self.worksheet.write("E2", base_IP)
         self.worksheet.insert_image("B2", "bits.png")
         self.worksheet.add_table("B6:J11", self.options)
-        # Creación del
+        # Creación del archivo
         self.workbook.close()
