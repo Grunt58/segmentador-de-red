@@ -37,7 +37,8 @@ class Red_Segmentada:
     ]
 }
 
-    def __init__(self, file_name: str, sheet_name="segmentos") -> None:
+    def __init__(self, base_IP: str, file_name: str, sheet_name="segmentos") -> None:
+        self.base_IP = base_IP
         self.file_name = file_name
         self.sheet_name = sheet_name
 
@@ -51,10 +52,10 @@ class Red_Segmentada:
         self.data.append(segment)
 
     # Creación de tabla con encabezados
-    def create_table(self, base_IP: str) -> None:
+    def create_table(self) -> None:
         self.worksheet.set_column("B:J", 20)
         self.worksheet.write("D2", "Dirección base")
-        self.worksheet.write("E2", base_IP)
+        self.worksheet.write("E2", self.base_IP)
         self.worksheet.insert_image("B2", "bits.png")
         self.worksheet.add_table("B6:J11", self.options)
         # Creación del archivo
