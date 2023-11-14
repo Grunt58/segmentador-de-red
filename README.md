@@ -11,7 +11,7 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
 - Puedes establecer una dirección de red y segmentarla cuantas veces quieras, la segmentación se hará de mayor a menor.
 
 <p align="center">
-    <img src="https://fast-fix.com.mx/wp-content/uploads/2021/08/virtual.gif" height=300>
+    <img src="https://arabinfotechllc.com/img/servers.gif" height=300>
 </p>
 
 ## Usar el programa
