@@ -11,7 +11,7 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
 - Puedes establecer una dirección de red y segmentarla cuantas veces quieras, la segmentación se hará de mayor a menor.
 
 <p align="center">
-    <img src="https://static.wixstatic.com/media/fa68ae_f8f91261c8434ecbaaa80ee49a875d8f~mv2.gif" height=300>
+    <img src="https://fast-fix.com.mx/wp-content/uploads/2021/08/virtual.gif" height=300>
 </p>
 
 ## Usar el programa
@@ -76,7 +76,3 @@ Hay varias razones por la que inicié este pequeño proyecto:
 - Comprender como funciona el flujo de trabajo en desarrollo de software.
 
 Sigo aprendiendo sobre las prácticas recomendadas para los nombres a los `commits` y `branches`, a utilizar los `issues` y `pull request` correctamente.
-
-<p align="center">
-        <img src="https://raw.githubusercontent.com/bornmay/bornmay/Update/svg/Bottom.svg" alt="Github Stats" />
-</p>
