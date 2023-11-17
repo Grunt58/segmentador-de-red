@@ -1,12 +1,19 @@
 # Tablas para segmentos de red IPv4
 
-Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=30>.
+Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=35 align=center>.
 
 <p align="center">
     <img src="https://merida.anahuac.mx/hs-fs/hubfs/apreu/Blog/2019%20Blog%20APREU/APREU%20Blog%20-%20Abril%2019/dribbble-shot_6.gif?width=800&name=dribbble-shot_6.gif" height=300>
 </p>
 
-## ¿Qué puedes hacer?
+## Contenido: 
+- [¿Qué puedes hacer?](#funcion)
+- [Usar el programa](#uso)
+  - [Ejemplo](#ejemplo)
+- [Ejecutar el programa](#ejecutar)
+- [¿Porqué desarrollé el programa?](#proposito)
+
+## <a name="funcion"></a>  ¿Qué puedes hacer?
 
 - Puedes establecer una dirección de red y segmentarla cuantas veces quieras, la segmentación se hará de mayor a menor.
 
@@ -14,13 +21,13 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
     <img src="https://arabinfotechllc.com/img/servers.gif" height=300>
 </p>
 
-## Usar el programa
+## <a name="uso"></a> Usar el programa
 
 - Debes proporcionar tu dirección base
 - Tus segmentos separados por comas (sin espacios)
 - El nombre de tu archivo de Excel
 
-### Ejemplo:
+### <a name="ejemplo"></a> Ejemplo:
 
 Dirección base: `200.0.4.0`
 
@@ -42,9 +49,9 @@ Esto generará 8 segmentos en tu red base, te proporcionará información como:
 
 También se generará un archivo `.xlsx` con todos los datos del los segmentos, este archivo se generará en la misma carpeta donde se encuentre `main.py`.
 
-## Ejecutar el programa
+## <a name="ejecutar"></a> Ejecutar el programa
 
-Debes tener instalado [Python](https://www.python.org) <img src="https://i.redd.it/xl5cyhhqmsab1.gif" height=20> en tu computadora, puedes descargarlo [aquí](https://www.python.org/downloads/).
+Debes tener instalado [Python](https://www.python.org) <img src="https://i.redd.it/xl5cyhhqmsab1.gif" height=35    align=center> en tu computadora, puedes descargarlo [aquí](https://www.python.org/downloads/).
 - Además debes tener instalada la librería `xlsxwriter`.
 ```
 pip install xlsxwriter
@@ -66,7 +73,7 @@ También puedes usar [replit](https://replit.com) para ejecutarlo. *Es probable 
     </a>
 </p>
 
-## ¿Porqué desarrollé el programa?
+## <a name="proposito"></a> ¿Porqué desarrollé el programa?
 
 Hay varias razones por la que inicié este pequeño proyecto:
 - Ayudarme a resolver con mayor facilidad los segmentos de una red.
