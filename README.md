@@ -7,11 +7,11 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
 </p>
 
 ## Contenido: 
-- [¿Qué puedes hacer?](#¿qué-puedes-hacer)
+- [¿Qué puedes hacer?](#¿qué-puedes-hacer?)
 - [Usar el programa](#usar-el-programa)
   - [Ejemplo](#ejemplo)
 - [Ejecutar el programa](#ejecutar-el-programa)
-- [¿Porqué desarrollé el programa?](#¿porqué-desarrollé-el-programa)
+- [¿Porqué desarrollé el programa?](#¿porqué-desarrollé-el-programa?)
 
 ## ¿Qué puedes hacer?
 
