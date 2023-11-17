@@ -1,4 +1,5 @@
-import ipaddress, excel_tables
+import ipaddress
+from classes import excel_tables
 
 # Dirección base de la red
 RAW_direccion_base = str(input("Dirección base: "))
