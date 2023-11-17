@@ -1,4 +1,4 @@
-import ipaddress, segmentos
+import ipaddress, excel_tables
 
 # Dirección base de la red
 RAW_direccion_base = str(input("Dirección base: "))
@@ -9,7 +9,7 @@ host_solicitados = [int(x) for x in input("Introduce la cantidad de hosts para c
 host_solicitados.sort(reverse=True)
 
 archivo = str(input("Nombre del archivo: "))
-tabla = segmentos.Red_Segmentada(RAW_direccion_base, archivo)
+tabla = excel_tables.Red_Segmentada(RAW_direccion_base, archivo)
 tabla.create_file()
 
 # Calcular y mostrar información para cada red
