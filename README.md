@@ -6,6 +6,12 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
     <img src="https://merida.anahuac.mx/hs-fs/hubfs/apreu/Blog/2019%20Blog%20APREU/APREU%20Blog%20-%20Abril%2019/dribbble-shot_6.gif?width=800&name=dribbble-shot_6.gif" height=300>
 </p>
 
+- [¿Qué puedes hacer?](#¿qué-puedes-hacer)
+- [Usar el programa](#usar-el-programa)
+  - [Ejemplo](#ejemplo)
+- [Ejecutar el programa](#ejecutar-el-programa)
+- [¿Porqué desarrollé el programa?](#¿porqué-desarrollé-el-programa)
+
 ## ¿Qué puedes hacer?
 
 - Puedes establecer una dirección de red y segmentarla cuantas veces quieras, la segmentación se hará de mayor a menor.
