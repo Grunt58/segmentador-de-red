@@ -1,11 +1,12 @@
 # Tablas para segmentos de red IPv4
 
-Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=30>.
+Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=35 align=center>.
 
 <p align="center">
     <img src="https://merida.anahuac.mx/hs-fs/hubfs/apreu/Blog/2019%20Blog%20APREU/APREU%20Blog%20-%20Abril%2019/dribbble-shot_6.gif?width=800&name=dribbble-shot_6.gif" height=300>
 </p>
 
+## Contenido: 
 - [¿Qué puedes hacer?](#¿qué-puedes-hacer)
 - [Usar el programa](#usar-el-programa)
   - [Ejemplo](#ejemplo)
@@ -50,7 +51,7 @@ También se generará un archivo `.xlsx` con todos los datos del los segmentos, 
 
 ## Ejecutar el programa
 
-Debes tener instalado [Python](https://www.python.org) <img src="https://i.redd.it/xl5cyhhqmsab1.gif" height=20> en tu computadora, puedes descargarlo [aquí](https://www.python.org/downloads/).
+Debes tener instalado [Python](https://www.python.org) <img src="https://i.redd.it/xl5cyhhqmsab1.gif" height=35    align=center> en tu computadora, puedes descargarlo [aquí](https://www.python.org/downloads/).
 - Además debes tener instalada la librería `xlsxwriter`.
 ```
 pip install xlsxwriter
