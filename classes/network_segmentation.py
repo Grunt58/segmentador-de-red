@@ -4,7 +4,7 @@ class Segments:
     total_segments: int = 0
 
     def __init__(self, network: str, segments: list) -> None:
-        self.network = network
+        self.network = ipaddress.IPv4Address(network)
         self.segments = segments
 
     @classmethod
