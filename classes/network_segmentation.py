@@ -1,6 +1,6 @@
 import ipaddress
 
-class segments:
+class Segments:
     total_segments: int = 0
 
     def __init__(self) -> None:
