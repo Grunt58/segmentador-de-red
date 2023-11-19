@@ -3,8 +3,8 @@ import ipaddress
 class Segments:
     total_segments: int = 0
 
-    def __init__(self, network: str, segments: list) -> None:
-        self.network = ipaddress.IPv4Address(network)
+    def __init__(self, init_ip: str, segments: list) -> None:
+        self.init_ip = ipaddress.IPv4Address(init_ip)
         self.segments = segments
 
     @classmethod
