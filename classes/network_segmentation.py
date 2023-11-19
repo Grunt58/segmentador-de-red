@@ -3,9 +3,9 @@ import ipaddress
 class Segments:
     total_segments: int = 0
 
-    def __init__(self, init_ip: str, segments: list) -> None:
+    def __init__(self, init_ip: str, hosts: list) -> None:
         self.init_ip = ipaddress.IPv4Address(init_ip)
-        self.segments = segments
+        self.hosts = hosts
 
     @classmethod
     def total_segments(cls) -> int:
