@@ -3,8 +3,9 @@ import ipaddress
 class Segments:
     total_segments: int = 0
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, network: str, segments: list) -> None:
+        self.network = network
+        self.segments = segments
 
     @classmethod
     def total_segments(cls) -> int:
