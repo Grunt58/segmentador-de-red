@@ -19,7 +19,7 @@ class Segments:
         }
 
     @classmethod
-    def total_segments(cls) -> int:
+    def get_total_segments(cls) -> int:
         return cls.total_segments
 
     @classmethod
