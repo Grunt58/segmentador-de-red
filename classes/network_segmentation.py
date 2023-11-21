@@ -19,6 +19,18 @@ class Segments:
     def next_segment(self) -> None:
         pass
 
+    def set_mask(self, host: int, mask: int):
+        # Máscara de subred
+        host_bits = host.bit_length() # Número de bits para representarse así mismo en binario
+        mask = 32 - host_bits
+        # host disponibles dentro del segmento
+        usable_hosts = 2**(32 - mask) - 2
+        # Asegura que los host solicitados no superen a los disponibles
+        if usable_hosts < host:
+            mask -= 1
+            usable_hosts = 2**(32 - mask) - 2
+        return mask, usable_hosts
+
     def host_bits(self, mask: int) -> list:
         # limpia los bits de la lista para el siguiente segmento
         self.bits.clear()
