@@ -45,7 +45,7 @@ class Segments:
         self.init_ip += 2**(32 - mask)
         return
 
-    def set_mask(self, host: int, mask: int):
+    def set_mask(self, host: int):
         # Máscara de subred
         host_bits = host.bit_length() # Número de bits para representarse así mismo en binario
         mask = 32 - host_bits
