@@ -81,3 +81,6 @@ class Segments:
         for key, value in self.segment.items():
             print(f"SEGMENTO: {self.total_segments}")
             print(f"{key:.<30}{value}")
+
+    def export_network_info(self) -> list:
+        return list(map(str, self.segment.values()))
