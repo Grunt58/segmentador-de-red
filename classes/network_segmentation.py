@@ -11,9 +11,9 @@ class Segments:
             'Host solicitados': None,
             'Host encontrados': None,
             'Dirección de red': None,
-            'Máscara digita': None,
+            'Máscara digital': None,
             'Máscara decimal': None,
-            'Primera Ip Utilizable': None,
+            'Primera Ip utilizable': None,
             'Última Ip utilizable': None,
             'Dirección de BR': None
         }
@@ -29,13 +29,18 @@ class Segments:
     def next_segment(self, mask: int) -> None:
         # Dirección de red del segmento
         network = ipaddress.IPv4Address((self.init_ip, mask), strict=False)
+        self.segment.update({'Dirección de red': network})
+        self.segment.update({'Máscara decimal': network.netmask})
 
         # Dirección Broadcast
         br_address = network.broadcast_address
+        self.segment.update({'Dirección de BR': br_address})
 
         # Primera y última IP ultilizable
         first_ip = network.network_address + 1
+        self.segment.update({'Primera Ip utilizable': first_ip})
         last_ip = br_address - 1
+        self.segment.update({'Última Ip utilizable': last_ip})
 
         self.init_ip += 2**(32 - mask)
         return
