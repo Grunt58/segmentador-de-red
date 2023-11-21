@@ -78,4 +78,6 @@ class Segments:
         return
 
     def get_network_info(self) -> None:
-        pass
+        for key, value in self.segment.items():
+            print(f"SEGMENTO: {self.total_segments}")
+            print(f"{key:.<30}{value}")
