@@ -28,7 +28,7 @@ class Segments:
 
     def next_segment(self, mask: int) -> None:
         # Dirección de red del segmento
-        network = ipaddress.IPv4Address((self.init_ip, mask), strict=False)
+        network = ipaddress.IPv4Network((self.init_ip, mask), strict=False)
         self.segment.update({'Dirección de red': network})
         self.segment.update({'Máscara decimal': network.netmask})
 
@@ -58,7 +58,7 @@ class Segments:
 
         self.segment.update({'Host solicitados': host})
         self.segment.update({'Host encontrados': usable_hosts})
-        return mask, usable_hosts
+        return mask
 
     def host_bits(self, mask: int) -> None:
         # limpia los bits de la lista para el siguiente segmento
