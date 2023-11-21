@@ -57,7 +57,7 @@ class Segments:
             usable_hosts = 2**(32 - mask) - 2
         return mask, usable_hosts
 
-    def host_bits(self, mask: int) -> list:
+    def host_bits(self, mask: int) -> None:
         # limpia los bits de la lista para el siguiente segmento
         self.bits.clear()
         # Cqntidad de bits activos por segmento
@@ -69,7 +69,10 @@ class Segments:
                 active_bits -= 1
             else:
                 self.bits.append(0)
-        return self.bits
+
+        digital_mask = ''.join(map(str,self.bits)) + "=/" + str(mask)
+        self.segment.update({'Máscara digital': digital_mask})
+        return
 
     def get_network_info(self) -> None:
         pass
