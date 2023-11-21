@@ -38,4 +38,5 @@ for num_hosts in host_solicitados:
     new_segment.insert(0, network_segmentation.Segments.get_total_segments())
     tabla.add_segment(new_segment)
 
-tabla.create_table()
+# El parámetro sirve para saber la longitud de la tabla
+tabla.create_table(network_segmentation.Segments.get_total_segments())

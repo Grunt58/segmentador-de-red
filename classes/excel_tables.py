@@ -52,11 +52,12 @@ class Red_Segmentada:
         self.data.append(segment)
 
     # Creación de tabla con encabezados
-    def create_table(self) -> None:
+    def create_table(self, index) -> None:
         self.worksheet.set_column("B:J", 20)
         self.worksheet.write("D2", "Dirección base")
         self.worksheet.write("E2", self.base_IP)
         self.worksheet.insert_image("B2", "bits.png")
-        self.worksheet.add_table("B6:J11", self.options)
+        # 'index' sirve para saber la longitud de la tabla
+        self.worksheet.add_table(f"B6:J{6 + index}", self.options)
         # Creación del archivo
         self.workbook.close()
