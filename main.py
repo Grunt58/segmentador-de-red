@@ -1,4 +1,3 @@
-import ipaddress
 from classes import excel_tables
 from classes import network_segmentation
 
