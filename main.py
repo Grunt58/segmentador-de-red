@@ -1,5 +1,5 @@
-from classes import excel_tables
-from classes import network_segmentation
+from scripts import excel_tables
+from scripts import network_segmentation
 
 # Dirección base de la red
 RAW_direccion_base = str(input("Dirección base: "))
