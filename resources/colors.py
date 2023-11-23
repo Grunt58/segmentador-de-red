@@ -18,4 +18,4 @@ class TextColors:
     underline = "\u001b[4m"
     bold = "\u001b[1m"
     inverse = "\u001b[7m"
-    end = "\u001b[0m"
+    reset = "\u001b[0m"
