@@ -1,4 +1,12 @@
-# Colores que serán utilizados para 'colorear' los mensajes en consola
+'''
+Colores que serán utilizados para 'colorear' los mensajes en consola
+
+Add Text Color to Python Terminal Programs:
+    https://www.youtube.com/watch?v=CiNMlZxwet0
+
+For more colors, check:
+    https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html
+'''
 class TextColors:
     red = "\u001b[0;31m"
     green = "\u001b[0;32m"
