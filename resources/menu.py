@@ -1,7 +1,7 @@
-from colors import TextColors
+from resources import colors
 
 # Objeto para establecer colores al texto
-text = TextColors
+text = colors.TextColors
 
 # Impresión de todo el menú del programa
 class Menu:
@@ -23,6 +23,10 @@ class Menu:
     def get_user_input(self) -> int:
         for index, value in self.options.items():
             print(f"{index}: {value}")
-        
-        user_input = int(input(self.select))
-        return user_input
+
+        try:
+            user_input = int(input(self.select))
+            return user_input
+        except ValueError as err:
+            print(f"{text.red}[{err}]: Solo números enteros.{text.reset}")
+            return 0
