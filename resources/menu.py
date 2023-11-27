@@ -24,5 +24,5 @@ class Menu:
         for index, value in self.options.items():
             print(f"{index}: {value}")
         
-        user_input = input(int(self.select))
+        user_input = int(input(self.select))
         return user_input
