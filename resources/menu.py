@@ -15,3 +15,14 @@ class Menu:
             4: f"{text.cyan}Salir{text.reset}"
         }
         self.select = f"{text.yellow}Opción: {text.reset}"
+
+    def show_menu(self) -> str:
+        return self.main_menu
+    
+    # Imprime la lista de opciones y toma la elección del usuario
+    def get_user_input(self) -> int:
+        for index, value in self.options.items():
+            print(f"{index}: {value}")
+        
+        user_input = input(int(self.select))
+        return user_input
