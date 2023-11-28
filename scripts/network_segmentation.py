@@ -1,7 +1,6 @@
 import ipaddress
 
 class Segments:
-    total_segments: int = 0
 
     def __init__(self, init_ip: str, hosts: list) -> None:
         self.init_ip = ipaddress.IPv4Address(init_ip)
@@ -17,14 +16,13 @@ class Segments:
             'Última Ip utilizable': None,
             'Dirección de BR': None
         }
+        self.total_segments = 0
 
-    @classmethod
-    def get_total_segments(cls) -> int:
-        return cls.total_segments
+    def get_total_segments(self) -> int:
+        return self.total_segments
 
-    @classmethod
-    def add_segment(cls) -> None:
-        cls.total_segments += 1
+    def add_segment(self) -> None:
+        self.total_segments += 1
 
     def next_segment(self, mask: int) -> None:
         # Dirección de red del segmento
@@ -36,7 +34,7 @@ class Segments:
         br_address = network.broadcast_address
         self.segment.update({'Dirección de BR': br_address})
 
-        # Primera y última IP ultilizable
+        # Primera y última IP u ltilizable
         first_ip = network.network_address + 1
         self.segment.update({'Primera Ip utilizable': first_ip})
         last_ip = br_address - 1
