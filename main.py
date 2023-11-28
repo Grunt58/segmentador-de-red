@@ -17,7 +17,7 @@ while True:
     match user_input:
         case 1:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
-            hosts: list = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+            hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
 
             new_segment: object = network_segmentation.Segments(network, hosts)
 
