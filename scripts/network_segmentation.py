@@ -1,5 +1,8 @@
 import ipaddress
 
+from resources import colors
+
+text: object = colors.TextColors
 class Segments:
 
     def __init__(self, init_ip: str, hosts: list) -> None:
@@ -77,7 +80,7 @@ class Segments:
 
     def get_network_info(self) -> None:
         for key, value in self.segment.items():
-            print(f"{key:.<30}{value}")
+            print(f"{key:.<30}{text.yellow}{value}{text.reset}")
 
     def export_network_info(self) -> list:
         return list(map(str, self.segment.values()))
