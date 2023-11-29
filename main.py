@@ -5,6 +5,12 @@ from scripts import network_segmentation
 from resources import menu
 from resources import colors
 
+def clear() -> None:
+    if(os.name == 'posix'):
+        os.system('clear')
+    else:
+        os.system('cls')
+
 # Clase menú
 main_menu: object = menu.Menu()
 # Para colorear la consola
@@ -32,6 +38,9 @@ while True:
                 print(f"{text.green}{curret_segment:-^40}{text.reset}")
                 new_segment.get_network_info()
 
+            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            clear()
+
         case 2:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
             hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
@@ -55,6 +64,9 @@ while True:
 
             table.create_table(new_segment.get_total_segments())
             print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
+
+            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            clear()
 
         case 3:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
@@ -84,8 +96,14 @@ while True:
             table.create_table(new_segment.get_total_segments())
             print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
+            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            clear()
+
         case 4:
             break
 
         case _:
             print(f"{text.red}[ERROR]: La opción es entre 1 a 4.{text.reset}")
+
+            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            clear()
