@@ -54,6 +54,7 @@ while True:
                 table.add_segment(segment_to_table)
 
             table.create_table(new_segment.get_total_segments())
+            print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
         case 3:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
@@ -81,6 +82,7 @@ while True:
                 table.add_segment(segment_to_table)
 
             table.create_table(new_segment.get_total_segments())
+            print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
         case 4:
             break
