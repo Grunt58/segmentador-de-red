@@ -86,4 +86,4 @@ while True:
             break
 
         case _:
-            pass
+            print(f"{text.red}[ERROR]: La opción es entre 1 a 4.{text.reset}")
