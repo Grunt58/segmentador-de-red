@@ -17,6 +17,7 @@ main_menu: object = menu.Menu()
 text: object = colors.TextColors
 
 while True:
+    clear()
     main_menu.show_menu()
     user_input: int = main_menu.get_user_input()
 
@@ -39,7 +40,6 @@ while True:
                 new_segment.get_network_info()
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
-            clear()
 
         case 2:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
@@ -66,7 +66,6 @@ while True:
             print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
-            clear()
 
         case 3:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
@@ -97,7 +96,6 @@ while True:
             print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
-            clear()
 
         case 4:
             break
@@ -106,4 +104,3 @@ while True:
             print(f"{text.red}[ERROR]: La opción es entre 1 a 4.{text.reset}")
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
-            clear()
