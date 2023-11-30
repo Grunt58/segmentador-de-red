@@ -101,11 +101,30 @@ while True:
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
 
         case 4:
+            file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
             networks: str = [str(network) for network in input(f"{text.magenta}Redes a las que segmentarás (separadas por comas): {text.reset}").split(",")]
 
             for network in networks:
                 print(f"Red: {network}")
                 hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+                new_segment: object = network_segmentation.Segments(network, hosts)
+                table: object = excel_tables.Red_Segmentada(network, file_name)
+                table.create_file()
+
+                for host in hosts:
+                    new_segment.add_segment()
+
+                    mask: int = new_segment.set_mask(host)
+                    new_segment.host_bits(mask)
+
+                    new_segment.next_segment(mask)
+
+                    segment_to_table: list[str] = new_segment.export_network_info()
+                    segment_to_table.insert(0, new_segment.get_total_segments())
+                    table.add_segment(segment_to_table)
+
+                table.create_table(new_segment.get_total_segments())
+                print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
 
         case _:
             print(f"{text.red}[ERROR]: La opción es entre 0 a 4.{text.reset}")
