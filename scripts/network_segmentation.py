@@ -5,11 +5,11 @@ from resources import colors
 text: object = colors.TextColors
 class Segments:
 
-    def __init__(self, init_ip: str, hosts: list) -> None:
+    def __init__(self, init_ip: str, hosts: list[int]) -> None:
         self.init_ip = ipaddress.IPv4Address(init_ip)
-        self.hosts = hosts
-        self.bits = []
-        self.segment = {
+        self.hosts: list[int] = hosts
+        self.bits:list[int] = []
+        self.segment: dict = {
             'Host solicitados': None,
             'Host encontrados': None,
             'Dirección de red': None,
@@ -48,10 +48,10 @@ class Segments:
 
     def set_mask(self, host: int) -> int:
         # Máscara de subred
-        host_bits = host.bit_length() # Número de bits para representarse así mismo en binario
-        mask = 32 - host_bits
+        host_bits: int = host.bit_length() # Número de bits para representarse así mismo en binario
+        mask: int = 32 - host_bits
         # host disponibles dentro del segmento
-        usable_hosts = 2**(32 - mask) - 2
+        usable_hosts: int = 2**(32 - mask) - 2
         # Asegura que los host solicitados no superen a los disponibles
         if usable_hosts < host:
             mask -= 1
@@ -65,7 +65,7 @@ class Segments:
         # limpia los bits de la lista para el siguiente segmento
         self.bits.clear()
         # Cqntidad de bits activos por segmento
-        active_bits = 8 - (32 - mask)
+        active_bits: int = 8 - (32 - mask)
         # Agrege los bits activos '1' y los inactivos '0'
         for _ in range(8):
             if active_bits > 0:
@@ -74,7 +74,7 @@ class Segments:
             else:
                 self.bits.append(0)
 
-        digital_mask = ''.join(map(str,self.bits)) + "=/" + str(mask)
+        digital_mask: str = ''.join(map(str,self.bits)) + "=/" + str(mask)
         self.segment.update({'Máscara digital': digital_mask})
         return
 
