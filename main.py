@@ -22,6 +22,9 @@ while True:
     user_input: int = main_menu.get_user_input()
 
     match user_input:
+        case 0:
+            break
+
         case 1:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
             hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
@@ -98,9 +101,9 @@ while True:
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
 
         case 4:
-            break
+            pass
 
         case _:
-            print(f"{text.red}[ERROR]: La opción es entre 1 a 4.{text.reset}")
+            print(f"{text.red}[ERROR]: La opción es entre 0 a 4.{text.reset}")
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
