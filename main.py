@@ -5,6 +5,7 @@ from scripts import network_segmentation
 from resources import menu
 from resources import colors
 
+# Limpia la consola
 def clear() -> None:
     if(os.name == 'posix'):
         os.system('clear')
@@ -26,20 +27,28 @@ while True:
             break
 
         case 1:
+            # La dirección la cual será segmentada
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
+            # Cantidad de host por segmento
             hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
 
             new_segment: object = network_segmentation.Segments(network, hosts)
 
+            # Calcular y mostrar información para cada subred
             for host in hosts:
+                # Establece la máscara de la subred
                 mask: int = new_segment.set_mask(host)
                 new_segment.host_bits(mask)
 
+                # Información general de la subred
                 new_segment.next_segment(mask)
 
+                # Segmento en el que estamos actualmente
                 new_segment.add_segment()
                 curret_segment: str = f"SEGMENTO: {new_segment.get_total_segments()}"
                 print(f"{text.green}{curret_segment:-^40}{text.reset}")
+
+                # Imprime la información de la subred
                 new_segment.get_network_info()
 
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
@@ -47,6 +56,7 @@ while True:
         case 2:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
             hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+            # Nombre para el archivo de Excel
             file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
 
             new_segment: object = network_segmentation.Segments(network, hosts)
@@ -62,6 +72,7 @@ while True:
 
                 new_segment.next_segment(mask)
 
+                # Exporta los datos de toda la rad segmentada a Excel
                 segment_to_table: list[str] = new_segment.export_network_info()
                 segment_to_table.insert(0, new_segment.get_total_segments())
                 table.add_segment(segment_to_table)
