@@ -10,10 +10,10 @@ class Red_Segmentada:
     
 
     def __init__(self, file_name: str) -> None:
-        self.base_IP = None
-        self.file_name = file_name
+        self.base_IP: str = None
+        self.file_name: str = file_name
         self.data: list = []
-        self.options = {
+        self.options: dict = {
         "data": self.data,
         "columns": [
             {
@@ -74,7 +74,6 @@ class Red_Segmentada:
             try:
                 self.workbook.close()
             except xlsxwriter.exceptions.FileCreateError as err:
-                decision = input(f"{text.red}[{err}]: Cierra el archivo antes de continuar...{text.reset}")
-                if decision != "n":
-                    continue
+                input(f"{text.red}[{err}]: Cierra el archivo antes de continuar...{text.reset}")
+                continue
             break

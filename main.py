@@ -38,7 +38,7 @@ while True:
                 new_segment.next_segment(mask)
 
                 new_segment.add_segment()
-                curret_segment = f"SEGMENTO: {new_segment.get_total_segments()}"
+                curret_segment: str = f"SEGMENTO: {new_segment.get_total_segments()}"
                 print(f"{text.green}{curret_segment:-^40}{text.reset}")
                 new_segment.get_network_info()
 
@@ -90,7 +90,7 @@ while True:
 
                 new_segment.next_segment(mask)
 
-                curret_segment = f"SEGMENTO: {new_segment.get_total_segments()}"
+                curret_segment: str = f"SEGMENTO: {new_segment.get_total_segments()}"
                 print(f"{text.green}{curret_segment:-^40}{text.reset}")
                 new_segment.get_network_info()
 

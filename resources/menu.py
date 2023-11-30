@@ -1,14 +1,14 @@
 from resources import colors
 
 # Objeto para establecer colores al texto
-text = colors.TextColors
+text: object = colors.TextColors
 
 # Impresión de todo el menú del programa
 class Menu:
     
     def __init__(self) -> None:
-        self.main_menu = f"{text.yellow}Tablas para segmentos de red IPv4{text.reset}"
-        self.options = {
+        self.main_menu: str = f"{text.yellow}Tablas para segmentos de red IPv4{text.reset}"
+        self.options: dict = {
             0: f"{text.cyan}Salir{text.reset}",
             1: f"{text.cyan}Segmentos en consola{text.reset}",
             2: f"{text.cyan}Segmentos en Excel{text.reset}",
@@ -26,7 +26,7 @@ class Menu:
             print(f"{index}: {value}")
 
         try:
-            user_input = int(input(self.select))
+            user_input: int = int(input(self.select))
             return user_input
         except ValueError as err:
             print(f"{text.red}[{err}]: Solo números enteros.{text.reset}")
