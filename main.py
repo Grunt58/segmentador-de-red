@@ -101,7 +101,11 @@ while True:
             input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
 
         case 4:
-            pass
+            networks: str = [str(network) for network in input(f"{text.magenta}Redes a las que segmentarás (separadas por comas): {text.reset}").split(",")]
+
+            for network in networks:
+                print(f"Red: {network}")
+                hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
 
         case _:
             print(f"{text.red}[ERROR]: La opción es entre 0 a 4.{text.reset}")
