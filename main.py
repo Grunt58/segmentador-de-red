@@ -5,6 +5,11 @@ from scripts import network_segmentation
 from resources import menu
 from resources import colors
 
+# Clase menú
+main_menu: object = menu.Menu()
+# Para colorear la consola
+text: object = colors.TextColors
+
 # Limpia la consola
 def clear() -> None:
     if(os.name == 'posix'):
@@ -12,10 +17,11 @@ def clear() -> None:
     else:
         os.system('cls')
 
-# Clase menú
-main_menu: object = menu.Menu()
-# Para colorear la consola
-text: object = colors.TextColors
+# Ordena los hosts de mayor a menor
+def ordered_hosts() -> list[int]:
+    hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+    hosts.sort(reverse=True)
+    return hosts
 
 while True:
     clear()
@@ -30,7 +36,7 @@ while True:
             # La dirección la cual será segmentada
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
             # Cantidad de host por segmento
-            hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+            hosts: list[int] = ordered_hosts()
 
             new_segment: object = network_segmentation.Segments(network, hosts)
 
@@ -55,7 +61,7 @@ while True:
 
         case 2:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
-            hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+            hosts: list[int] = ordered_hosts()
             # Nombre para el archivo de Excel
             file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
 
@@ -85,7 +91,7 @@ while True:
 
         case 3:
             network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
-            hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+            hosts: list[int] = ordered_hosts()
             file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
 
             new_segment: object = network_segmentation.Segments(network, hosts)
@@ -124,7 +130,7 @@ while True:
             for network in networks:
                 print(f"Red: {network}")
                 table.set_base_IP(network)
-                hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+                hosts: list[int] = ordered_hosts()
                 new_segment: object = network_segmentation.Segments(network, hosts)
 
                 for host in hosts:
