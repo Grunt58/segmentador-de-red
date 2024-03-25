@@ -3,6 +3,8 @@ import ipaddress
 from resources import colors
 
 text: object = colors.TextColors
+
+FULL_MASK: list[int] = [255, 255, 255, 255]
 class Segments:
 
     def __init__(self, init_ip: str, hosts: list[int]) -> None:
@@ -15,6 +17,7 @@ class Segments:
             'Dirección de red': None,
             'Máscara digital': None,
             'Máscara decimal': None,
+            'Máscara wildcard': None,
             'Primera Ip utilizable': None,
             'Última Ip utilizable': None,
             'Dirección de BR': None
@@ -42,6 +45,10 @@ class Segments:
         self.segment.update({'Primera Ip utilizable': first_ip})
         last_ip = br_address - 1
         self.segment.update({'Última Ip utilizable': last_ip})
+        octet_mask: list[int] = [int(octet) for octet in str(network.netmask).split(".")]
+
+        wildcard_mask = self.set_wildcard_mask(octet_mask)
+        self.segment.update({'Máscara wildcard': wildcard_mask})
 
         self.init_ip += 2**(32 - mask)
         return
@@ -60,6 +67,15 @@ class Segments:
         self.segment.update({'Host solicitados': host})
         self.segment.update({'Host encontrados': usable_hosts})
         return mask
+
+    # Retorna la wildcard del segmento actual
+    def set_wildcard_mask(self, mask: list[int]) -> str:
+        wildcard_mask: list[int] = []
+        for i in range(len(FULL_MASK)):
+            # Calcula la Wildcard restando 255.255.255.255 con la máscara del segmento actual
+            wildcard_mask.append(FULL_MASK[i] - mask[i])
+        wildcard_mask = '.'.join(str(octet) for octet in wildcard_mask)
+        return wildcard_mask
 
     def host_bits(self, mask: int) -> None:
         # limpia los bits de la lista para el siguiente segmento

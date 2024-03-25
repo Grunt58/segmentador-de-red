@@ -35,6 +35,9 @@ class Red_Segmentada:
                 "header": "Máscara decimal",
             },
             {
+                "header": "Máscara wildcard"
+            },
+            {
                 "header": "Primera IP utilizable",
             },
             {
