@@ -2,11 +2,11 @@ import os
 
 from scripts import excel_tables
 from scripts import network_segmentation
-from resources import menu
+from resources import text
 from resources import colors
 
 # Clase menú
-main_menu: object = menu.Menu()
+main_menu: object = text.Menu()
 # Para colorear la consola
 text: object = colors.TextColors
 
