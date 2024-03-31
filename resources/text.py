@@ -2,21 +2,21 @@ from resources import colors
 import os, platform
 
 # Objeto para establecer colores al texto
-text: object = colors.TextColors
+color: object = colors.TextColors
 
 # Impresión de todo el menú del programa
 class Menu:
     
     def __init__(self) -> None:
-        self.main_menu: str = f"{text.yellow}Tablas para segmentos de red IPv4{text.reset}"
+        self.main_menu: str = f"{color.yellow}Tablas para segmentos de red IPv4{color.reset}"
         self.options: dict = {
-            0: f"{text.cyan}Salir{text.reset}",
-            1: f"{text.cyan}Segmentos en consola{text.reset}",
-            2: f"{text.cyan}Segmentos en Excel{text.reset}",
-            3: f"{text.cyan}Segmentos en consola y Excel{text.reset}",
-            4: f"{text.cyan}Multiples redes a Excel{text.reset}"
+            0: f"{color.cyan}Salir{color.reset}",
+            1: f"{color.cyan}Segmentos en consola{color.reset}",
+            2: f"{color.cyan}Segmentos en Excel{color.reset}",
+            3: f"{color.cyan}Segmentos en consola y Excel{color.reset}",
+            4: f"{color.cyan}Multiples redes a Excel{color.reset}"
         }
-        self.select = f"{text.yellow}Opción: {text.reset}"
+        self.select = f"{color.yellow}Opción: {color.reset}"
 
     def show_menu(self) -> str:
         return self.main_menu
@@ -30,7 +30,7 @@ class Menu:
             user_input: int = int(input(self.select))
             return user_input
         except ValueError as err:
-            print(f"{text.red}[{err}]: Solo números enteros.{text.reset}")
+            print(f"{color.red}[{err}]: Solo números enteros.{color.reset}")
             return 0
 
 '''

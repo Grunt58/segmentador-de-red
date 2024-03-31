@@ -8,7 +8,7 @@ from resources import colors
 # Clase menú
 main_menu: object = text.Menu()
 # Para colorear la consola
-text: object = colors.TextColors
+color: object = colors.TextColors
 
 # Limpia la consola
 def clear() -> None:
@@ -19,9 +19,14 @@ def clear() -> None:
 
 # Ordena los hosts de mayor a menor
 def ordered_hosts() -> list[int]:
-    hosts: list[int] = [int(host) for host in input(f"{text.magenta}Cantidad de hosts (separados por comas): {text.reset}").split(",")]
+    hosts: list[int] = [int(host) for host in input(f"{color.magenta}Cantidad de hosts (separados por comas): {color.reset}").split(",")]
     hosts.sort(reverse=True)
     return hosts
+
+# Inicio del programa
+print(text.ASCII_ART)
+print(text.ABOUT)
+print(text.RUNNIGN_ON)
 
 while True:
     clear()
@@ -34,7 +39,7 @@ while True:
 
         case 1:
             # La dirección la cual será segmentada
-            network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
+            network: str = str(input(f"{color.magenta}Dirección base: {color.reset}"))
             # Cantidad de host por segmento
             hosts: list[int] = ordered_hosts()
 
@@ -52,18 +57,18 @@ while True:
                 # Segmento en el que estamos actualmente
                 new_segment.add_segment()
                 curret_segment: str = f"SEGMENTO: {new_segment.get_total_segments()}"
-                print(f"{text.green}{curret_segment:-^40}{text.reset}")
+                print(f"{color.green}{curret_segment:-^40}{color.reset}")
 
                 # Imprime la información de la subred
                 new_segment.get_network_info()
 
-            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            input(f"\n\n\n{color.blue}Presiona enter para continuar...{color.reset}")
 
         case 2:
-            network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
+            network: str = str(input(f"{color.magenta}Dirección base: {color.reset}"))
             hosts: list[int] = ordered_hosts()
             # Nombre para el archivo de Excel
-            file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
+            file_name: str = str(input(f"{color.magenta}Nombre de archivo: {color.reset}"))
 
             new_segment: object = network_segmentation.Segments(network, hosts)
             table: object = excel_tables.Red_Segmentada(file_name)
@@ -85,14 +90,14 @@ while True:
 
             table.create_table(new_segment.get_total_segments(), network)
             table.close_file()
-            print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
+            print(f"{color.green}Los datos fueron exportados exitosamente.{color.reset}")
 
-            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            input(f"\n\n\n{color.blue}Presiona enter para continuar...{color.reset}")
 
         case 3:
-            network: str = str(input(f"{text.magenta}Dirección base: {text.reset}"))
+            network: str = str(input(f"{color.magenta}Dirección base: {color.reset}"))
             hosts: list[int] = ordered_hosts()
-            file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
+            file_name: str = str(input(f"{color.magenta}Nombre de archivo: {color.reset}"))
 
             new_segment: object = network_segmentation.Segments(network, hosts)
             table: object = excel_tables.Red_Segmentada(file_name)
@@ -108,7 +113,7 @@ while True:
                 new_segment.next_segment(mask)
 
                 curret_segment: str = f"SEGMENTO: {new_segment.get_total_segments()}"
-                print(f"{text.green}{curret_segment:-^40}{text.reset}")
+                print(f"{color.green}{curret_segment:-^40}{color.reset}")
                 new_segment.get_network_info()
 
                 segment_to_table: list[str] = new_segment.export_network_info()
@@ -117,13 +122,13 @@ while True:
 
             table.create_table(new_segment.get_total_segments(), network)
             table.close_file()
-            print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
+            print(f"{color.green}Los datos fueron exportados exitosamente.{color.reset}")
 
-            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            input(f"\n\n\n{color.blue}Presiona enter para continuar...{color.reset}")
 
         case 4:
-            file_name: str = str(input(f"{text.magenta}Nombre de archivo: {text.reset}"))
-            networks: str = [str(network) for network in input(f"{text.magenta}Redes a las que segmentarás (separadas por comas): {text.reset}").split(",")]
+            file_name: str = str(input(f"{color.magenta}Nombre de archivo: {color.reset}"))
+            networks: str = [str(network) for network in input(f"{color.magenta}Redes a las que segmentarás (separadas por comas): {color.reset}").split(",")]
             table: object = excel_tables.Red_Segmentada(file_name)
             table.create_file()
 
@@ -146,11 +151,11 @@ while True:
                     table.add_segment(segment_to_table)
 
                 table.create_table(new_segment.get_total_segments(), network)
-                print(f"{text.green}Los datos fueron exportados exitosamente.{text.reset}")
+                print(f"{color.green}Los datos fueron exportados exitosamente.{color.reset}")
 
             table.close_file()
 
         case _:
-            print(f"{text.red}[ERROR]: La opción es entre 0 a 4.{text.reset}")
+            print(f"{color.red}[ERROR]: La opción es entre 0 a 4.{color.reset}")
 
-            input(f"\n\n\n{text.blue}Presiona enter para continuar...{text.reset}")
+            input(f"\n\n\n{color.blue}Presiona enter para continuar...{color.reset}")
