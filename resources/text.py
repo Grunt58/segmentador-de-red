@@ -59,14 +59,14 @@ ASCII_ART = """ ________________________________________________________________
 |________________________________________________________________________________________________|
 """
 
-ABOUT = """ ________________________________________________________________________________________________
+ABOUT = f""" ________________________________________________________________________________________________
 |                                                                                                |
-|                       This is v3.2.0 of "Segmentador de redes IPv4"                            |
-|           Visit: https://github.com/Grunt58/segmentador-de-red/releases for updates.           |
+|                       {color.bright_red}This is v3.2.0 of "Segmentador de redes IPv4"{color.reset}                            |
+|           Visit: {color.bright_blue}{color.underline}https://github.com/Grunt58/segmentador-de-red/releases{color.reset} for updates.           |
 |________________________________________________________________________________________________|
 """
 
-RUNNIGN_ON = f"""Python version: {platform.python_version()}
-Python compiler: {platform.python_compiler()}
-Running on: {platform.system()} {platform.release()} ({os.name}) ({platform.version()})
+RUNNIGN_ON = f"""Python version: {color.bright_green}{platform.python_version()}{color.reset}
+Python compiler: {color.bright_green}{platform.python_compiler()}{color.reset}
+Running on: {color.bright_green}{platform.system()} {platform.release()} ({os.name}) ({platform.version()}){color.reset}
 """

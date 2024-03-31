@@ -23,10 +23,12 @@ def ordered_hosts() -> list[int]:
     hosts.sort(reverse=True)
     return hosts
 
+clear()
 # Inicio del programa
 print(text.ASCII_ART)
 print(text.ABOUT)
 print(text.RUNNIGN_ON)
+input(f"{color.background_blue}Presiona {color.underline}Enter{color.reset}{color.background_blue} para continuar...{color.reset}")
 
 while True:
     clear()
