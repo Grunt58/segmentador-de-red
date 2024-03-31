@@ -37,7 +37,7 @@ class TextColors:
     background_cyan = "\u001b[46m"
     background_white = "\u001b[47m"
     # Bright version background colors
-    background__bright_black = "\u001b[40;1m"
+    background_bright_black = "\u001b[40;1m"
     background_bright_red = "\u001b[41;1m"
     background_bright_green = "\u001b[42;1m"
     background_bright_yellow = "\u001b[43;1m"
