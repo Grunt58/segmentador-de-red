@@ -70,7 +70,3 @@ RUNNIGN_ON = f"""Python version: {platform.python_version()}
 Python compiler: {platform.python_compiler()}
 Running on: {platform.system()} {platform.release()} ({os.name}) ({platform.version()})
 """
-
-print(ASCII_ART)
-print(ABOUT)
-print(RUNNIGN_ON)
