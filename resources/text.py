@@ -70,3 +70,28 @@ RUNNIGN_ON = f"""Python version: {color.bright_green}{platform.python_version()}
 Python compiler: {color.bright_green}{platform.python_compiler()}{color.reset}
 Running on: {color.bright_green}{platform.system()} {platform.release()} ({os.name}) ({platform.version()}){color.reset}
 """
+
+SEG_TO_CONSOLE = f""" ________________________________________________________________________________________________
+|                                                                                                |
+|                                      {color.cyan}Segmentos en Consola{color.reset}                                      |
+|________________________________________________________________________________________________|
+"""
+
+SEG_TO_EXCEL = f""" ________________________________________________________________________________________________
+|                                                                                                |
+|                                       {color.cyan}Segmentos en Excel{color.reset}                                       |
+|________________________________________________________________________________________________|
+
+"""
+
+SEG_TO_CONSOLE_EXCEL = f""" ________________________________________________________________________________________________
+|                                                                                                |
+|                                  {color.cyan}Segmentos en Consola y Excel{color.reset}                                  |
+|________________________________________________________________________________________________|
+"""
+
+MULTIPLE_NETWORKS = f""" ________________________________________________________________________________________________
+|                                                                                                |
+|                                    {color.cyan}Múltiples redes a Excel{color.reset}                                     |
+|________________________________________________________________________________________________|
+"""
