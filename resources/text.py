@@ -30,7 +30,7 @@ class Menu:
             user_input: int = int(input(self.select))
             return user_input
         except ValueError as err:
-            print(f"{color.red}[{err}]: Solo números enteros.{color.reset}")
+            print(f"{color.background_red}[{err}]:{color.reset} {color.red}Solo números enteros.{color.reset}")
             return 0
 
 '''
