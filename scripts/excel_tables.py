@@ -63,12 +63,12 @@ class Red_Segmentada:
     # Creación de tabla con encabezados
     def create_table(self, index: int, sheet_name: str) -> None:
         self.worksheet = self.workbook.add_worksheet(sheet_name)
-        self.worksheet.set_column("B:J", 20)
+        self.worksheet.set_column("B:K", 20)
         self.worksheet.write("D2", "Dirección base")
         self.worksheet.write("E2", self.base_IP)
         self.worksheet.insert_image("B2", "bits.png")
         # 'index' sirve para saber la longitud de la tabla
-        self.worksheet.add_table(f"B6:J{6 + index}", self.options)
+        self.worksheet.add_table(f"B6:K{6 + index}", self.options)
         self.data.clear()
 
     def close_file(self) -> None:
