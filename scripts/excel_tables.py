@@ -63,9 +63,16 @@ class Red_Segmentada:
     # Creación de tabla con encabezados
     def create_table(self, index: int, sheet_name: str) -> None:
         self.worksheet = self.workbook.add_worksheet(sheet_name)
-        self.worksheet.set_column("B:K", 20)
-        self.worksheet.write("D2", "Dirección base")
-        self.worksheet.write("E2", self.base_IP)
+        self.worksheet.set_column("B:J", 20)
+
+        black = self.workbook.add_format({"color": "#000000"})
+        blue = self.workbook.add_format({"color": "#4f81bd"})
+        cell_format = self.workbook.add_format({"align": "center", "valign": "vcenter", "border": 1, "fg_color": "#EBEBEB"})
+
+        self.worksheet.merge_range("D2:G3", "", cell_format)
+
+        self.worksheet.write_rich_string("D2", black, "Dirección: ", blue, self.base_IP, cell_format)
+
         self.worksheet.insert_image("B2", "bits.png")
         # 'index' sirve para saber la longitud de la tabla
         self.worksheet.add_table(f"B6:K{6 + index}", self.options)
