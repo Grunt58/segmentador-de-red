@@ -61,7 +61,7 @@ ASCII_ART = """ ________________________________________________________________
 
 ABOUT = f""" ________________________________________________________________________________________________
 |                                                                                                |
-|                       {color.bright_red}This is v3.2.0 of "Segmentador de redes IPv4"{color.reset}                            |
+|                       {color.bright_red}This is v4.0.0 of "Segmentador de redes IPv4"{color.reset}                            |
 |           Visit: {color.bright_blue}{color.underline}https://github.com/Grunt58/segmentador-de-red/releases{color.reset} for updates.           |
 |________________________________________________________________________________________________|
 """
