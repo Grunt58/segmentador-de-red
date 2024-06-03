@@ -2,10 +2,6 @@
 
 Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=35 align=center>.
 
-<p align="center">
-    <img src="https://merida.anahuac.mx/hs-fs/hubfs/apreu/Blog/2019%20Blog%20APREU/APREU%20Blog%20-%20Abril%2019/dribbble-shot_6.gif?width=800&name=dribbble-shot_6.gif" height=300>
-</p>
-
 ## Contenido: 
 - [¿Qué puedes hacer?](#funcion)
 - [Usar el programa](#uso)
@@ -16,10 +12,6 @@ Este programa generará segmentos de una red dada y exportará los datos a una t
 ## <a name="funcion"></a>  ¿Qué puedes hacer?
 
 - Puedes establecer una dirección de red y segmentarla cuantas veces quieras, la segmentación se hará de mayor a menor.
-
-<p align="center">
-    <img src="https://arabinfotechllc.com/img/servers.gif" height=300>
-</p>
 
 ## <a name="uso"></a> Usar el programa
 
@@ -43,6 +35,7 @@ Esto generará 8 segmentos en tu red base, te proporcionará información como:
 - Máscara digital
     - Tabla de bits
 - Máscara decimal
+- Máscara Wildcard
 - Primera IP utilizable
 - Última IP utilizable
 - Dirección de BR
