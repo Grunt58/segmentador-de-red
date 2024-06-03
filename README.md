@@ -1,3 +1,8 @@
+## IMPORTANT
+This is the last version of this project (`v4.0.0`), "**Segmentador IPv4**" will change it's core programming language to `C#` and will continue getting new updates.
+
+This repository will be archived and stop receiving updates, but you can still using it/fork it.
+
 # Tablas para segmentos de red IPv4
 
 Este programa generará segmentos de una red dada y exportará los datos a una tabla de Excel <img src="https://media3.giphy.com/media/9i7dTHKDOGAUmZI8PC/giphy.gif" height=35 align=center>.
